@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Amy’s Cabinet · A personal collection</title>
+<meta name="description" content="A small cabinet of art, digital experiments, and games. A personal collection by Amy.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23482b21'/%3E%3Cpath d='M7 8h5v17H7zm7-2h5v19h-5zm7 5h4v14h-4z' fill='%23eacb8f'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="dvd.css">
+<link rel="stylesheet" href="wall-gallery.css">
+<link rel="stylesheet" href="digital-folio.css"><link rel="stylesheet" href="media-packaging.css"><link rel="stylesheet" href="board-papers.css"><link rel="stylesheet" href="miniature-room.css"></head>
+<body>
+<div class="site-shell">
+<header><a class="wordmark" href="./" aria-label="Amy's Cabinet home"><span class="mark">✳</span> THE CABINET</a><a class="text-button" id="about" href="about.html">About the collector <span aria-hidden="true">↗</span></a></header>
+<main>
+<section class="intro" aria-labelledby="title">
+<div class="intro-copy"><p class="eyebrow">A PERSONAL COLLECTION OF</p>
+<h1 id="title">Amy’s <em>Cabinet</em><span class="title-star" aria-hidden="true">✧</span></h1>
+<p class="intro-line" id="tagline">Art, imagined worlds &amp; things to play.</p>
+<p class="profile-line" id="profile-line">Game Design Student · ArtCenter College of Design · Class of 2029</p></div>
+<div class="wall-gallery gallery-left" aria-label="Framed artworks"><figure class="wall-frame frame-6"><img src="wall-art/6-crop.png" width="400" height="439" alt="Pencil figure drawing"></figure><figure class="wall-frame frame-7"><img src="wall-art/7-crop.png" width="613" height="618" alt="Mixed-media portrait"></figure><figure class="wall-frame frame-1"><img src="wall-art/1.jpg" width="1080" height="1440" alt="Bird collage and collected fragments" decoding="async"></figure><figure class="wall-frame frame-2"><img src="wall-art/2.jpg" width="1179" height="1629" alt="Painted figures beneath a star-filled sky" decoding="async"></figure></div>
+<div class="wall-gallery gallery-right" aria-label="Framed artworks"><figure class="wall-frame frame-3"><img src="wall-art/3-crop.png" width="1194" height="840" alt="Handmade miniature room" decoding="async"></figure><figure class="wall-frame frame-4"><img src="wall-art/4.jpg" width="1440" height="1080" alt="Creature painting detail" decoding="async"></figure><figure class="wall-frame frame-5"><img src="wall-art/5.jpg" width="1920" height="1080" alt="Hell’s Kitchen game artwork" decoding="async"></figure></div>
+</section>
+<section class="collection" aria-label="Portfolio bookshelf">
+<div class="collection-heading"><span>EXPLORE THE COLLECTION</span><span>Art · Digital Art · Games</span></div>
+<div class="shelf-scroll" tabindex="0" aria-label="Three sections of books. Scroll horizontally on small screens.">
+<div class="cabinet"><div class="labels"><div><span>01</span> Art <small>Made by hand &amp; heart</small></div><div><span>02</span> Digital Art <small>Experiments on a screen</small></div><div><span>03</span> Games <small>Worlds you can step into</small></div></div><div class="bays" id="bays"></div><div class="shelf-edge"></div></div>
+</div>
+<p class="interaction-hint"><span aria-hidden="true">✧</span> <span id="hint">Hover to discover a cover · Click to open</span></p>
+</section>
+</main>
+<footer><span>A little world, collected by <span id="footer-name">Amy</span>.</span><span>VOL. 01 <i>•</i> A WORK IN PROGRESS</span></footer>
+</div>
+<dialog id="book-dialog" aria-labelledby="book-title">
+<div class="reader-toolbar"><span id="reader-category">THE COLLECTION</span><button class="close-button" id="close-book" aria-label="Close book">Close <span aria-hidden="true">×</span></button></div>
+<div class="open-book" id="open-book"><section class="page page-left"><p class="page-kicker" id="book-kicker"></p><h2 id="book-title"></h2><div class="page-art" id="page-art" aria-hidden="true"><span>✳</span></div><p class="page-caption" id="page-caption"></p></section><section class="page page-right"><p class="page-kicker" id="sheet-label"></p><h3 id="sheet-title"></h3><div id="sheet-body"></div><span class="page-number" id="page-number"></span></section></div>
+<div class="reader-footer"><button id="prev-page" aria-label="Previous pages">← <span>Previous</span></button><span id="page-count" aria-live="polite"></span><button id="next-page" aria-label="Next pages"><span>Next</span> →</button></div>
+</dialog>
+<script src="content.js"></script><script src="app.js"></script><script src="dvd.js"></script>
+<script src="digital-folio.js"></script><script src="board-papers.js"></script><script src="media-packaging.js"></script><script src="miniature-room.js"></script></body></html>

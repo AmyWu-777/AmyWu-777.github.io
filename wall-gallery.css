@@ -1,0 +1,59 @@
+/* Quiet, symmetrical cabinet wall with a raised-letter title. */
+.site-shell{background:#514338}
+.intro{display:grid;grid-template-columns:minmax(150px,1fr) minmax(330px,2fr) minmax(150px,1fr);gap:clamp(20px,3vw,48px);padding:30px clamp(24px,4vw,70px);min-height:520px;background:radial-gradient(ellipse at 50% 40%,#756452 0%,#655443 65%,#5c4b3d 100%);border-radius:8px;align-items:center;overflow:hidden}
+.intro-copy{grid-column:2;grid-row:1;text-align:center;min-width:0}
+.intro .eyebrow{font-size:9px;letter-spacing:.26em;color:#c5b59f;margin:0 0 23px}
+.intro h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(48px,5.6vw,84px);letter-spacing:-.045em;line-height:1.06;color:#dbceb8;text-shadow:0 1px 0 #f4e9d84d,0 2px 0 #46382e,0 4px 5px #30271c66;display:block;margin:0}
+.intro h1 em{display:block;font-style:normal;font-weight:400;letter-spacing:-.025em}
+.intro .intro-line{font-size:clamp(14px,1.2vw,18px);line-height:1.6;color:#e0d4c3;margin:24px 0 12px;text-wrap:balance}
+.intro .profile-line{font-size:clamp(10px,.85vw,12px);line-height:1.8;color:#c7b9a5;max-width:350px;margin:0 auto;text-wrap:balance}
+.wall-gallery{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;min-width:0;margin:0;padding:0;grid-row:1}
+.gallery-left{grid-column:1}.gallery-right{grid-column:3}
+.wall-frame{position:relative;margin:0;padding:5px;background:#b6a48b;border:8px solid #3f3027;outline:1px solid #30241e;box-shadow:inset 0 0 0 1px #89704f,0 2px 0 1px #30241e,3px 7px 9px #30241d55;border-radius:1px;transform:none;flex:none}
+.wall-frame:before{content:'';position:absolute;inset:-5px;border:1px solid #9e805044;pointer-events:none}
+.wall-frame img{display:block;width:100%;height:auto;max-width:100%;box-shadow:0 0 0 1px #47382d66}
+.gallery-left .wall-frame{width:clamp(120px,11vw,154px)}
+.gallery-right .wall-frame{width:clamp(155px,15vw,210px);border-width:7px}
+.frame-2{border-color:#46332a}.frame-4{border-color:#51402e}
+@media(max-width:900px){.intro{grid-template-columns:minmax(105px,1fr) minmax(240px,2fr) minmax(120px,1fr);gap:18px;padding:28px 20px}.intro h1{font-size:51px}.gallery-left .wall-frame{width:115px}.gallery-right .wall-frame{width:145px}.wall-frame{border-width:6px;padding:4px}}
+@media(max-width:650px){.intro{grid-template-columns:1fr 1fr;gap:30px 20px;padding:35px 24px;min-height:0}.intro-copy{grid-column:1 / -1;grid-row:1}.intro h1{font-size:51px}.intro h1 em{display:inline}.intro .eyebrow{margin-bottom:17px}.intro .intro-line{margin-top:18px}.gallery-left{grid-column:1;grid-row:2}.gallery-right{grid-column:2;grid-row:2}.gallery-left .wall-frame{width:min(140px,100%)}.gallery-right .wall-frame{width:min(180px,100%)}.wall-gallery{gap:20px}.intro .profile-line{max-width:290px}}
+/* Level frames hung at deliberately staggered positions. */
+@media(min-width:901px){
+ .intro{grid-template-columns:minmax(190px,1fr) minmax(330px,1.65fr) minmax(210px,1fr);gap:28px}
+ .gallery-left{align-items:flex-start;gap:28px;padding-top:8px}
+ .gallery-left .frame-2{align-self:flex-end;margin-top:0}
+ .gallery-right{align-items:flex-end;gap:24px}
+ .gallery-right .frame-3{width:clamp(155px,13vw,185px);margin-right:5px}
+ .gallery-right .frame-4{align-self:flex-start;width:clamp(155px,13vw,185px);margin-top:0}
+ .gallery-right .frame-5{width:clamp(150px,12vw,175px);margin-top:-6px}
+}
+.wall-frame{border-width:12px!important;border-style:solid;border-color:#705039 #35271f #2b211b #5a4030;background:#a28c71;box-shadow:inset 0 1px 0 #d1b68b,inset 0 0 0 3px #604932,0 0 0 1px #251c17,0 3px 0 2px #30231b,4px 9px 12px #231b1755}
+.wall-frame:before{inset:-9px;border:3px double #af895359;box-shadow:0 1px 0 #211711,inset 0 1px 0 #d0a87836;background:repeating-linear-gradient(0deg,transparent 0 5px,#21150c12 6px,transparent 7px);pointer-events:none;z-index:1}
+.wall-frame:after{content:'';position:absolute;inset:-11px;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 21V3h18M6 18V6h12' fill='none' stroke='%239b7549' stroke-width='1'/%3E%3Cpath d='M7 7Q17 5 15 12Q9 16 7 7ZM8 8l8 8' fill='none' stroke='%23be9762' stroke-opacity='.55'/%3E%3C/svg%3E");background-size:23px 23px;background-repeat:no-repeat;background-position:left top;filter:drop-shadow(0 1px 0 #21160d)}
+.wall-frame img{position:relative;z-index:2}
+@media(max-width:900px){.gallery-left .frame-1{align-self:flex-start}.gallery-left .frame-2{align-self:flex-end}.gallery-right .frame-3,.gallery-right .frame-5{align-self:flex-end}.gallery-right .frame-4{align-self:flex-start}.wall-frame{border-width:9px!important}}
+/* Placement follows Amy's supplied wall mock-up. */
+.intro{position:relative;display:block;height:clamp(480px,38vw,620px);min-height:480px;padding:0;overflow:hidden}
+.intro-copy{position:absolute;left:36%;top:50%;width:29%;transform:translateY(-50%)}
+.intro h1{font-size:clamp(48px,5.4vw,84px)}
+.wall-gallery{display:contents!important}
+.intro .wall-gallery .wall-frame{position:absolute;margin:0;padding:2px;border:18px solid transparent!important;border-image:url('wall-art/carved-wood.svg') 64 stretch!important;background:#38291e;outline:0;border-radius:0;box-shadow:3px 6px 8px #21170f66;transform:none;max-width:none}
+.wall-frame:before,.wall-frame:after{display:none}
+.wall-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.intro .wall-gallery .frame-1{left:3%;top:5%;width:14%;height:49%}
+.intro .wall-gallery .frame-4{left:19%;top:43%;width:16%;height:33%}
+.intro .wall-gallery .frame-6{left:31%;top:10%;width:8%;height:26%;border-width:12px!important}
+.intro .wall-gallery .frame-7{left:7%;top:68%;width:9%;height:27%;border-width:12px!important}
+.intro .wall-gallery .frame-5{left:65%;top:10%;width:17%;height:27%}
+.intro .wall-gallery .frame-2{left:83%;top:28%;width:14%;height:51%}
+.intro .wall-gallery .frame-3{left:65%;top:59%;width:17%;height:31%}
+.frame-7 img{object-position:50% 43%}
+@media(max-width:900px) and (min-width:651px){.intro h1{font-size:48px}.intro .intro-line{font-size:13px}.intro .wall-gallery .wall-frame{border-width:12px!important}.intro .wall-gallery .frame-6,.intro .wall-gallery .frame-7{border-width:9px!important}}
+@media(max-width:650px){.intro{height:auto;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding:32px 20px}.intro-copy{position:static;transform:none;grid-column:1/-1;width:100%;margin-bottom:12px}.intro h1{font-size:48px}.intro .wall-gallery .wall-frame{position:static;width:100%;height:auto;aspect-ratio:4/3;border-width:14px!important}.intro .wall-gallery .frame-1,.intro .wall-gallery .frame-2,.intro .wall-gallery .frame-6,.intro .wall-gallery .frame-7{aspect-ratio:3/4}.intro .wall-gallery .frame-6,.intro .wall-gallery .frame-7{width:80%;justify-self:center;align-self:center}.frame-5{grid-column:1/-1;justify-self:center;max-width:220px!important}}
+
+/* Preserve the exact crops supplied for these three artworks. */
+.intro .wall-gallery .frame-3,.intro .wall-gallery .frame-6,.intro .wall-gallery .frame-7{height:auto;aspect-ratio:auto}
+.intro .wall-gallery .frame-3 img,.intro .wall-gallery .frame-6 img,.intro .wall-gallery .frame-7 img{height:auto;object-fit:contain;object-position:center}
+
+/* Slightly reduce the three right-hand frames around their existing centers. */
+@media(min-width:651px){.intro .wall-gallery .frame-2,.intro .wall-gallery .frame-3,.intro .wall-gallery .frame-5{transform:scale(.95);transform-origin:center center}}

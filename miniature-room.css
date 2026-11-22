@@ -1,0 +1,8 @@
+.room-preview{position:fixed;inset:0;z-index:80;pointer-events:none;display:grid;place-items:center;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility .4s;}
+.room-preview.is-visible{opacity:1;visibility:visible}
+.room-preview::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(239,228,208,.92) 0%,rgba(239,228,208,.72) 30%,rgba(48,33,26,.13) 78%)}
+.room-preview-stage{position:relative;width:min(880px,94vw);height:min(660px,80vh);transform:translateY(14px);transition:transform .6s ease}
+.room-preview.is-visible .room-preview-stage{transform:translateY(0)}
+.room-preview canvas{display:block;width:100%;height:100%;filter:drop-shadow(0 26px 22px #39221c30)}
+.room-preview-caption{position:absolute;bottom:1%;left:0;right:0;text-align:center;font:12px Georgia,serif;letter-spacing:.15em;color:#6d5140}
+@media(prefers-reduced-motion:reduce){.room-preview,.room-preview-stage{transition:none}}

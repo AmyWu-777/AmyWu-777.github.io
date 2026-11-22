@@ -1,0 +1,36 @@
+/* Digital Art uses the cabinet’s original book geometry and cover styling. */
+.digital-folio{padding:0;border:0;background:transparent;color:#e6dfcf;width:min(1120px,94vw);max-width:94vw;max-height:96dvh;overflow:visible;box-shadow:none}
+.digital-folio::backdrop{background:#282a27b8;backdrop-filter:blur(8px)}
+.folio-bar,.folio-nav{display:flex;align-items:center;justify-content:space-between;font:400 12px/1.4 var(--sans);letter-spacing:.06em;padding:14px 4px;gap:20px}
+.folio-name{font-size:15px;letter-spacing:.025em}.digital-folio button{font:inherit;color:inherit;background:none;border:0;padding:9px 12px;border-radius:30px;cursor:pointer}.digital-folio button:hover{background:#ffffff12}.digital-folio button:focus-visible{outline:2px solid var(--folio-accent);outline-offset:3px}.digital-folio button:disabled{opacity:.3;cursor:default}
+.folio-stage{position:relative;aspect-ratio:1.5;max-height:76dvh;margin:auto;perspective:1800px;isolation:isolate;border-radius:15px;background:var(--folio-accent);padding:8px;box-shadow:0 18px 65px #0005,0 3px 0 #d8d1bd55}
+.folio-paper{position:absolute;inset:8px;background:#ede8dc;border-radius:9px;box-shadow:0 1px 5px #282a2720;transform-origin:center top;backface-visibility:hidden}
+.folio-turning{z-index:2;box-shadow:0 12px 22px #29282335;will-change:transform;pointer-events:none}.folio-nav span{font-variant-numeric:tabular-nums;opacity:.7;font-size:11px}
+@media(max-width:600px){.digital-folio{width:96vw;max-width:96vw}.folio-stage{aspect-ratio:1.5}.folio-name{font-size:13px}.folio-bar,.folio-nav{padding:10px 2px;gap:6px}}
+
+/* Restore only the rounded Digital Art cover corners. */
+.digital-slot .cover{border-radius:15px 15px 9px 9px}
+
+/* Rounded sheet cross-sections replace the square cuboid thickness faces. */
+.digital-slot .page-side,.digital-slot .page-top,.digital-slot .page-bottom{display:none}
+.digital-slot .back{border-radius:15px 15px 9px 9px}
+.digital-slot .digital-page-layer{position:absolute;inset:2px;display:block;border-radius:13px 13px 7px 7px;background:#ded4bf;border:1px solid #c4b69e;transform:translateZ(calc(var(--t) * var(--depth)));backface-visibility:visible;pointer-events:none}
+.folio-paper{display:grid;place-items:center;overflow:hidden;padding:clamp(12px,2.4vw,32px)}
+.folio-paper img{display:block;width:100%;height:100%;object-fit:contain;border-radius:3px}
+
+.folio-hard-leaf{position:absolute;inset:8px;transform-origin:center top;transform-style:preserve-3d;pointer-events:none;z-index:2;will-change:transform}
+.folio-leaf-face{position:absolute;inset:0;backface-visibility:hidden;background:#ede8dc;border-radius:9px;box-shadow:0 8px 22px #29282330}
+.folio-leaf-face>.folio-paper{inset:0}
+.folio-leaf-back{transform:rotateX(180deg)}
+
+/* Calendar leaves pass over the hinge and settle behind the opaque page. */
+.folio-stage{transform-style:preserve-3d;isolation:auto}
+.folio-stage>.folio-paper{transform:translateZ(1px)}
+.folio-hard-leaf{z-index:auto}
+
+/* Artwork-first landscape pages, with only a narrow paper margin. */
+.digital-folio{width:min(97vw,calc((100dvh - 112px)*1.5));max-width:97vw;max-height:98dvh}
+.digital-folio .folio-stage{max-height:none;padding:4px}
+.digital-folio .folio-paper{inset:4px;padding:clamp(4px,.5vw,8px)}
+.digital-folio .folio-leaf-face>.folio-paper{inset:0}
+.digital-folio .folio-hard-leaf{inset:4px}

@@ -1,0 +1,39 @@
+/* Loose instruction sheets, used only by the two board-game boxes. */
+.board-papers{position:fixed;inset:0;width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:transparent;color:#e8dfcd;overflow:hidden;box-shadow:none}
+.board-papers::backdrop{background:#29251fbd;backdrop-filter:blur(7px);animation:bp-backdrop-in .7s ease both}
+@keyframes bp-backdrop-in{from{background:#29251f18;backdrop-filter:blur(0)}to{background:#29251fbd;backdrop-filter:blur(7px)}}
+.bp-toolbar,.bp-nav{position:absolute;left:50%;width:min(1040px,90vw);transform:translateX(-50%);display:flex;align-items:center;justify-content:space-between;gap:16px;font:12px/1.4 var(--sans);letter-spacing:.04em}
+.bp-toolbar{top:clamp(16px,4vh,42px)}.bp-name{font:clamp(15px,1.5vw,20px)/1.3 var(--serif);letter-spacing:.02em}.bp-nav{bottom:clamp(16px,4vh,42px);width:min(760px,82vw)}
+.board-papers button{font:inherit;color:inherit;border:1px solid transparent;background:transparent;border-radius:20px;padding:10px 15px;cursor:pointer;transition:background .2s}
+.board-papers button:hover:not(:disabled){background:#efe5d015}.board-papers button:focus-visible{outline:1px solid #d8c2a0;outline-offset:3px}.board-papers button:disabled{opacity:.3;cursor:default}.bp-count{font-size:11px;font-variant-numeric:tabular-nums;opacity:.65}
+.bp-stage{position:absolute;left:50%;top:50%;width:min(1380px,90vw,calc((100dvh - 200px)*2.13));aspect-ratio:2.13;transform:translate(-50%,-50%);perspective:1800px;perspective-origin:50% 44%}
+.bp-stack{position:absolute;inset:0;transform-style:preserve-3d}
+.bp-sheet{position:absolute;inset:0;transform-style:preserve-3d;pointer-events:none;will-change:transform}
+.bp-face,.bp-fold-front,.bp-fold-back{position:absolute;inset:0;background-color:#ede8dc;background-image:repeating-linear-gradient(0deg,#806b4e03 0px,#806b4e03 1px,transparent 1px,transparent 4px);border:1px solid #c5baa6;border-radius:2px;backface-visibility:hidden;box-shadow:0 1px 0 #c6bba7,0 2px 0 #ded5c3,0 12px 32px #1f1a152b}
+.bp-back{transform:rotateY(180deg) translateZ(1px);background-color:#e5dece}
+.bp-face-front{transform:translateZ(1px)}
+.bp-sheet[data-front="true"]{pointer-events:auto}
+.bp-content{position:absolute;inset:0;padding:clamp(18px,3vw,42px);display:flex;flex-direction:column;gap:12px;color:#5b5144;overflow:auto;font:14px/1.6 var(--sans)}
+.bp-content:empty{overflow:hidden}
+.bp-content img{width:100%;height:100%;min-height:0;object-fit:contain}.bp-content h2{font:500 clamp(20px,2vw,28px)/1.25 var(--serif);margin:0}.bp-content p{margin:0}.bp-content a{color:inherit;text-underline-offset:4px}
+/* A subtle crease remains in the unbound paper, without a spine or binding. */
+.bp-face-front:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,transparent 49.7%,#9b8e7312 49.96%,#fff5 50.12%,transparent 50.4%),linear-gradient(180deg,transparent 49.6%,#9b8e7310 49.96%,#fff4 50.15%,transparent 50.45%)}
+.bp-fold{position:absolute;inset:0;transform-style:preserve-3d;pointer-events:none;will-change:transform}
+.bp-fold-half{position:absolute;left:0;width:100%;height:50%;transform-style:preserve-3d}.bp-fold-top{top:0}.bp-fold-bottom{top:50%;transform-origin:center top}
+.bp-quarter{position:absolute;top:0;bottom:0;width:50%;transform-style:preserve-3d}.bp-quarter-left{left:0}.bp-quarter-right{left:50%;transform-origin:left center}
+.bp-fold-front,.bp-fold-back{box-shadow:0 1px 0 #c7bba6,0 5px 14px #30261b16;border-color:#c5baa64a}.bp-fold-back{transform:rotateY(180deg) translateZ(.5px);background-color:#e8e1d2}
+.bp-quarter-right .bp-fold-front{background-image:linear-gradient(90deg,#7563480d,transparent 9%)}
+.bp-fold-bottom .bp-fold-front{background-image:linear-gradient(180deg,#7563480d,transparent 12%)}
+/* Fine paper fibres and an irregular, low-contrast grain; the cabinet's paper colour stays intact. */
+.bp-face:before,.bp-fold-front:before,.bp-fold-back:before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.075;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23796950' filter='url(%23n)' opacity='.65' d='M0 0h180v180H0z'/%3E%3C/svg%3E")}
+.board-papers .bp-launch-box{position:fixed;min-height:0!important;z-index:5;pointer-events:none;transition:none!important}
+.board-papers .bp-launch-box .board-volume,.board-papers .bp-launch-box .board-cap{transition:none}
+@media(max-width:600px){.bp-stage{width:min(92vw,calc((100dvh - 150px)*2.13))}.bp-toolbar{width:90vw}.bp-name{max-width:70%;font-size:15px}.bp-content{padding:16px;font-size:12px}.bp-nav{width:90vw}}
+@media(prefers-reduced-motion:reduce){.board-papers::backdrop{animation:none}}
+
+.bp-toolbar,.bp-nav{z-index:10;padding:0;margin:0;min-height:0}
+
+/* Keep each complete source image, using nearly all available screen width. */
+.board-papers .bp-stage{width:min(96vw,calc((100dvh - 140px)*2.13))}
+.board-papers .bp-content{padding:clamp(5px,.6vw,9px);box-sizing:border-box;align-items:center;justify-content:center;overflow:hidden}
+.board-papers .bp-content img{display:block;object-fit:contain;object-position:center;max-width:100%;max-height:100%}
